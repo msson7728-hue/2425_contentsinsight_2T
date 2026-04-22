@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2T 콘텐츠 분석 보고서 2025–2026</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+<style>
+/* ════════════════════════════════════
+   Design System
+════════════════════════════════════ */
+:root {
+  /* Color */
+  --bg:          #0f0f12;
+  --surface-1:   #17171d;
+  --surface-2:   #1e1e27;
+  --surface-3:   #252532;
+  --border:      rgba(255,255,255,0.07);
+  --border-med:  rgba(255,255,255,0.12);
+
+  --text-primary:   #f0f0f5;
+  --text-secondary: #9090aa;
+  --text-tertiary:  #5a5a72;
+
+  --blue:   #5b8def;
+  --purple: #9b74f7;
+  --teal:   #3ecfa0;
+  --amber:  #f5a623;
+  --rose:   #f26b8a;
+  --slate:  #7090b0;
+
+  /* Semantic */
+  --ai-color:    var(--purple);
+  --nonai-color: var(--teal);
+  --promo-color: var(--amber);
+
+  /* Type Scale */
+  --text-xs:  11px;
+  --text-sm:  13px;
+  --text-md:  15px;
+  --text-lg:  18px;
+  --text-xl:  24px;
+  --text-2xl: 32px;
+  --text-3xl: 48px;
+  --text-4xl: 64px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Font */
+  --font: 'Pretendard', -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ════════════════════════════════════
+   Layout
+════════════════════════════════════ */
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 var(--space-10); }
+
+.section {
+  padding: var(--space-16) 0;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-of-type { border-bottom: none; }
+
+/* ════════════════════════════════════
+   Typography Helpers
+════════════════════════════════════ */
+.label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.label-accent { color: var(--purple); }
+
+.display {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  color: var(--text-primary);
+}
+.section-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.card-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+/* ════════════════════════════════════
+   HERO
+════════════════════════════════════ */
+.hero {
+  padding: var(--space-20) 0 var(--space-16);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: -300px;
+  width: 700px; height: 700px;
+  background: radial-gradient(ellipse, rgba(155,116,247,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+.hero-titles {
+  margin-bottom: var(--space-10);
+}
+.hero-sub {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-3);
+}
+
+/* KPI 바 */
+.kpi-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: var(--space-10);
+}
+.kpi-item {
+  background: var(--surface-1);
+  padding: var(--space-6) var(--space-6);
+}
+.kpi-num {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.kpi-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.c-purple { color: var(--purple); }
+.c-teal   { color: var(--teal); }
+.c-amber  { color: var(--amber); }
+.c-rose   { color: var(--rose); }
+.c-blue   { color: var(--blue); }
+
+/* ════════════════════════════════════
+   Section Header
+════════════════════════════════════ */
+.sec-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+.sec-header-left { display: flex; flex-direction: column; gap: var(--space-2); }
+.sec-note {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════
+   Section 01 — 런칭 추이
+════════════════════════════════════ */
+.chart-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+.chart-year-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  height: 110px;
+}
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  height: 100%;
+  justify-content: flex-end;
+}
+.bar-body {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  min-height: 3px;
+  position: relative;
+  transition: opacity 0.15s;
+  cursor: default;
+}
+.bar-body:hover { opacity: 0.75; }
+.bar-val {
+  position: absolute;
+  top: -18px;
+  left: 50%; transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.bar-lbl {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* 분기 요약 그리드 */
+.quarter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+.q-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+.q-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.q1::before { background: var(--purple); }
+.q2::before { background: var(--rose); }
+.q3::before { background: var(--teal); }
+.q4::before { background: var(--amber); }
+
+.q-label { font-size: var(--text-xs); font-weight: 600; color: var(--text-tertiary); margin-bottom: var(--space-3); letter-spacing: 0.06em; }
+.q-num { font-size: 40px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: var(--space-3); }
+.q-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.q-tag {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+.q-tag-ai    { background: rgba(155,116,247,0.15); color: var(--purple); }
+.q-tag-nonai { background: rgba(62,207,160,0.12); color: var(--teal); }
+.q-tag-note  { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
+
+/* AI 비중 비교 */
+.ai-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.ai-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.ai-year-tag {
+  font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-5);
+}
+.ai-ratio-nums {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.ai-big { font-size: 40px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.ai-unit { font-size: var(--text-sm); font-weight: 500; color: var(--text-secondary); }
+.ratio-track {
+  height: 6px;
+  background: var(--surface-3);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+.ratio-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--purple);
+}
+.ratio-legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+.ai-desc {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+em { color: var(--text-primary); font-style: normal; font-weight: 600; }
+
+/* ════════════════════════════════════
+   Section 02 — 카테고리
+════════════════════════════════════ */
+.cat-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+/* 카테고리 랭킹 리스트 */
+.cat-list {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.cat-list-header {
+  display: grid;
+  grid-template-columns: 28px 1fr 60px 60px 80px;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.cat-list-header span { font-size: var(--text-xs); font-weight: 600; color: var(--text-tertiary); letter-spacing: 0.06em; text-transform: uppercase; }
+.cat-list-row {
+  display: grid;
+  grid-template-columns: 28px 1fr 60px 60px 80px;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.1s;
+}
+.cat-list-row:last-child { border-bottom: none; }
+.cat-list-row:hover { background: var(--surface-2); }
+.cat-rank { font-size: var(--text-xs); font-weight: 700; color: var(--text-tertiary); }
+.cat-name-cell { display: flex; flex-direction: column; gap: 3px; }
+.cat-name { font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); }
+.cat-bar-inline { height: 3px; border-radius: 2px; margin-top: 4px; }
+.cat-total { font-size: var(--text-sm); font-weight: 700; text-align: right; }
+.cat-25 { font-size: var(--text-xs); font-weight: 500; color: var(--text-secondary); text-align: right; }
+.cat-trend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.trend-badge {
+  font-size: 10px; font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+.trend-up   { background: rgba(62,207,160,0.12); color: var(--teal); }
+.trend-down { background: rgba(242,107,138,0.12); color: var(--rose); }
+.trend-new  { background: rgba(245,166,35,0.15); color: var(--amber); }
+.trend-same { background: rgba(255,255,255,0.06); color: var(--text-secondary); }
+
+/* 포맷 분포 */
+.fmt-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.fmt-list { display: flex; flex-direction: column; gap: var(--space-4); }
+.fmt-item {}
+.fmt-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+.fmt-name { font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); }
+.fmt-count { font-size: var(--text-xs); font-weight: 600; color: var(--text-secondary); }
+.fmt-track { height: 5px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
+.fmt-fill { height: 100%; border-radius: 99px; }
+
+/* 히트맵 */
+.heatmap-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.heatmap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+}
+.heatmap-table thead tr {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.heatmap-table th {
+  padding: var(--space-3) var(--space-4);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.heatmap-table th:first-child { text-align: left; }
+.heatmap-table td {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.heatmap-table tr:hover td { background: rgba(255,255,255,0.02); }
+.hm-cat { font-size: var(--text-xs); font-weight: 600; color: var(--text-secondary); text-align: left !important; white-space: nowrap; }
+.hm-cell {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 30px; height: 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--text-xs);
+}
+.hm-0 { color: var(--text-tertiary); }
+.hm-1 { background: rgba(155,116,247,0.12); color: #b8a4ff; }
+.hm-2 { background: rgba(155,116,247,0.22); color: #c8b8ff; }
+.hm-3 { background: rgba(155,116,247,0.36); color: #d8ccff; }
+.hm-4 { background: rgba(155,116,247,0.52); color: #fff; }
+.hm-5 { background: rgba(155,116,247,0.70); color: #fff; }
+.hm-11{ background: rgba(155,116,247,0.85); color: #fff; }
+
+.hm-peak { background: rgba(245,166,35,0.25) !important; color: var(--amber) !important; }
+.hm-note { font-size: 10px; color: var(--text-tertiary); text-align: left; }
+
+/* ════════════════════════════════════
+   Section 03 — 최근 3개월
+════════════════════════════════════ */
+.recent-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-6);
+}
+.signals-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  align-self: start;
+}
+.signal-row {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+}
+.signal-row:first-child { padding-top: 0; }
+.signal-row:last-child { border-bottom: none; padding-bottom: 0; }
+.signal-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  margin-top: 7px; flex-shrink: 0;
+}
+.signal-body {}
+.signal-main { font-size: var(--text-sm); font-weight: 600; color: var(--text-primary); line-height: 1.4; }
+.signal-sub  { font-size: 11px; color: var(--text-tertiary); margin-top: 3px; line-height: 1.5; }
+
+/* 타임라인 */
+.timeline {}
+.tl-month-block { margin-bottom: var(--space-6); }
+.tl-month-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.tl-month-name {
+  font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.tl-month-name.active { color: var(--purple); }
+.tl-month-line { flex: 1; height: 1px; background: var(--border); }
+.tl-month-count {
+  font-size: 10px; font-weight: 600;
+  color: var(--text-tertiary);
+  background: var(--surface-2);
+  padding: 2px 8px; border-radius: 99px;
+}
+
+.tl-items { display: flex; flex-direction: column; gap: var(--space-2); }
+.tl-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  transition: border-color 0.15s;
+}
+.tl-item:hover { border-color: var(--border-med); }
+.badge {
+  font-size: 9px; font-weight: 700;
+  padding: 2px 6px; border-radius: 3px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  flex-shrink: 0; white-space: nowrap;
+}
+.badge-ai    { background: rgba(155,116,247,0.18); color: #c4aeff; }
+.badge-nonai { background: rgba(62,207,160,0.12); color: var(--teal); }
+.badge-etc   { background: rgba(255,255,255,0.07); color: var(--text-secondary); }
+.tl-title { font-size: var(--text-xs); font-weight: 500; color: var(--text-primary); flex: 1; line-height: 1.45; }
+.tl-fmt   { font-size: 10px; font-weight: 500; color: var(--text-tertiary); flex-shrink: 0; white-space: nowrap; }
+
+/* 예정 강의 */
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+.up-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.up-meta { display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-3); }
+.up-date { font-size: 10px; color: var(--text-tertiary); font-weight: 500; }
+.up-title { font-size: var(--text-xs); font-weight: 500; color: var(--text-primary); line-height: 1.5; }
+
+/* ════════════════════════════════════
+   Section 04 — 프로모션
+════════════════════════════════════ */
+.promo-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.promo-stat-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex; flex-direction: column; gap: var(--space-5);
+}
+.promo-stat-num {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--amber);
+}
+.promo-stat-sub { font-size: var(--text-xs); color: var(--text-tertiary); font-weight: 500; }
+.promo-stat-note {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.promo-timeline-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.promo-timeline-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--text-xs); font-weight: 600;
+  color: var(--text-tertiary); letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--surface-2);
+  display: grid;
+  grid-template-columns: 70px 1fr 120px 120px;
+  gap: var(--space-4);
+}
+.promo-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 120px 120px;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.1s;
+}
+.promo-row:last-child { border-bottom: none; }
+.promo-row:hover { background: var(--surface-2); }
+.promo-month-badge {
+  font-size: 10px; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(245,166,35,0.12);
+  color: var(--amber);
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+.promo-name { font-size: var(--text-sm); font-weight: 500; color: var(--text-primary); }
+.promo-period { font-size: var(--text-xs); color: var(--text-secondary); font-weight: 500; }
+.promo-type { font-size: var(--text-xs); font-weight: 600; padding: 2px 8px; border-radius: 4px; width: fit-content; }
+.promo-type-regular { background: rgba(91,141,239,0.12); color: var(--blue); }
+.promo-type-ongoing { background: rgba(62,207,160,0.12); color: var(--teal); }
+
+.promo-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.promo-insight-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+.pi-icon { font-size: 22px; margin-bottom: var(--space-3); }
+.pi-title { font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2); line-height: 1.4; }
+.pi-desc { font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.7; }
+
+/* ════════════════════════════════════
+   Section 05 — 종합 인사이트
+════════════════════════════════════ */
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+.ins-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.ins-top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.ins-num {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.ins-title { font-size: var(--text-md); font-weight: 700; color: var(--text-primary); line-height: 1.4; }
+.ins-body { font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.8; }
+.ins-tag {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 4px;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+/* ════════════════════════════════════
+   Footer
+════════════════════════════════════ */
+footer {
+  padding: var(--space-10) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border);
+}
+
+/* ════════════════════════════════════
+   Section 03 — AI 세그먼트
+════════════════════════════════════ */
+.seg-status-row {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.seg-status-group { display: flex; flex-direction: column; gap: var(--space-3); }
+.seg-status-label {
+  font-size: var(--text-xs); font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+.seg-label-up   { background: rgba(62,207,160,0.12); color: var(--teal); }
+.seg-label-mid  { background: rgba(245,166,35,0.12); color: var(--amber); }
+.seg-label-down { background: rgba(242,107,138,0.12); color: var(--rose); }
+.seg-status-cards { display: flex; flex-direction: column; gap: var(--space-2); }
+.seg-status-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+}
+.seg-card-up   { border-top: 2px solid var(--teal); }
+.seg-card-mid  { border-top: 2px solid var(--amber); }
+.seg-card-down { border-top: 2px solid var(--rose); }
+.seg-sc-name { font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2); }
+.seg-sc-nums { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); }
+.seg-from { font-size: var(--text-xs); font-weight: 600; color: var(--text-tertiary); }
+.seg-from-was { color: var(--rose); }
+.seg-arrow { font-size: var(--text-xs); color: var(--text-tertiary); }
+.seg-to { font-size: var(--text-xl); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.seg-to-up   { color: var(--teal); }
+.seg-to-mid  { color: var(--amber); }
+.seg-to-down { color: var(--text-tertiary); }
+.seg-sc-sub { font-size: 10px; color: var(--text-tertiary); font-weight: 500; line-height: 1.5; }
+
+.seg-flow-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+}
+.seg-flow-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+  flex-wrap: wrap; gap: var(--space-3);
+}
+.seg-flow-legend { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+.sfl-item { display: flex; align-items: center; gap: var(--space-2); font-size: 10px; font-weight: 600; color: var(--text-secondary); }
+.sfl-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+.seg-flow-grid {
+  display: grid;
+  grid-template-columns: 140px repeat(6, 1fr);
+  padding: var(--space-5) var(--space-6);
+  gap: var(--space-2) var(--space-3);
+  align-items: center;
+}
+.sfg-head {
+  font-size: 10px; font-weight: 700; color: var(--text-tertiary);
+  letter-spacing: 0.06em; text-align: center; padding: var(--space-2) 0;
+}
+.sfg-head:first-child { text-align: left; }
+.sfg-period-label { font-size: var(--text-xs); font-weight: 500; color: var(--text-secondary); padding-right: var(--space-3); }
+.sfg-bar-cell { display: flex; align-items: center; justify-content: center; }
+.sfg-bar {
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: rgba(255,255,255,0.9);
+  min-width: 28px; height: 28px; transition: opacity 0.15s; cursor: default;
+}
+.sfg-bar:hover { opacity: 0.75; }
+.sfg-zero { color: var(--text-tertiary); font-size: 10px; font-weight: 500; }
+.sfg-divider-col { grid-column: 1 / -1; height: 1px; background: var(--border); margin: var(--space-1) 0; }
+.sfg-year-marker {
+  grid-column: 1 / -1;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--text-tertiary); text-transform: uppercase;
+  padding: var(--space-2) 0 var(--space-1);
+}
+
+.seg-detail-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+.seg-group { border-bottom: 1px solid var(--border); }
+.seg-group:last-child { border-bottom: none; }
+.seg-group-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background: var(--surface-2); gap: var(--space-4);
+}
+.sgh-left { display: flex; align-items: center; gap: var(--space-3); }
+.sgh-badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.03em; white-space: nowrap; }
+.sgh-name { font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); }
+.sgh-counts { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
+.sgh-yr25 { font-size: var(--text-xs); font-weight: 600; color: var(--text-tertiary); }
+.sgh-arr  { font-size: var(--text-xs); color: var(--text-tertiary); }
+.sgh-yr26 { font-size: var(--text-xs); font-weight: 700; }
+.seg-rows { padding: var(--space-2) 0; }
+.seg-row {
+  display: grid; grid-template-columns: 52px 1fr 52px;
+  gap: var(--space-4); padding: var(--space-3) var(--space-6);
+  align-items: center; transition: background 0.1s;
+}
+.seg-row:hover { background: rgba(255,255,255,0.02); }
+.seg-row-25 { opacity: 0.6; }
+.seg-row-planned { opacity: 0.45; font-style: italic; }
+.sr-q { font-size: 10px; font-weight: 700; color: var(--text-tertiary); letter-spacing: 0.04em; white-space: nowrap; }
+.sr-title { font-size: var(--text-xs); font-weight: 500; color: var(--text-primary); line-height: 1.5; }
+.sr-fmt { font-size: 10px; font-weight: 600; color: var(--text-tertiary); text-align: right; white-space: nowrap; }
+.seg-divider {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--text-tertiary); text-transform: uppercase;
+  padding: var(--space-2) var(--space-6);
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  margin: var(--space-1) 0;
+}
+.seg-insight-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.seg-insight-card {
+  background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: var(--space-5);
+}
+.si-icon { font-size: 22px; margin-bottom: var(--space-3); }
+.si-title { font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-3); line-height: 1.4; }
+.si-body { font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.8; }
+
+/* ════════════════════════════════════
+   Animations
+════════════════════════════════════ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade { animation: fadeIn 0.5s ease forwards; opacity: 0; }
+.d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.1s; }
+.d3 { animation-delay: 0.15s; } .d4 { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+  HERO
+══════════════════════════════════ -->
+<div class="page-wrap">
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span class="label label-accent">Contents Analytics Report · 2T Team</span>
+    </div>
+    <div class="hero-titles">
+      <div class="display">2025–2026<br>콘텐츠 분석</div>
+      <div class="hero-sub">런칭일 기준 · 기획전/프로모션 항목 별도 집계 · 순매출 수치 미집계</div>
+    </div>
+
+    <div class="kpi-bar fade d1">
+      <div class="kpi-item">
+        <div class="kpi-num c-purple">62</div>
+        <div class="kpi-desc">2025 런칭 (기획전 제외)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-num c-rose">58</div>
+        <div class="kpi-desc">2026 런칭 (기획전 제외)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-num c-teal">+138%</div>
+        <div class="kpi-desc">AI 코스 비중 증가 YoY</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-num c-amber">6</div>
+        <div class="kpi-desc">2026 프로모션 기획전</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+  01 런칭 추이
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">01 —</span>
+      <span class="section-title">런칭 추이</span>
+    </div>
+    <span class="sec-note">기획전/프로모션 제외 · 런칭 건수 기준<br>순매출 수치 시트 미집계</span>
+  </div>
+
+  <!-- 월별 바 차트 2025 -->
+  <div class="chart-card fade d1">
+    <div class="chart-year-label">2025 — 월별 런칭 건수</div>
+    <div class="bar-chart" id="chart25"></div>
+  </div>
+
+  <!-- 월별 바 차트 2026 -->
+  <div class="chart-card fade d2">
+    <div class="chart-year-label">2026 — 월별 런칭 건수 (1~7월, 예정 포함)</div>
+    <div class="bar-chart" id="chart26"></div>
+  </div>
+
+  <!-- 분기 요약 -->
+  <div class="quarter-grid fade d3">
+    <div class="q-card q1">
+      <div class="q-label">2025 Q1 · 1~3월</div>
+      <div class="q-num c-purple">13</div>
+      <div class="q-tags">
+        <span class="q-tag q-tag-ai">AI 4</span>
+        <span class="q-tag q-tag-nonai">Non-AI 9</span>
+        <span class="q-tag q-tag-note">VOD 전용</span>
+      </div>
+    </div>
+    <div class="q-card q2">
+      <div class="q-label">2025 Q2 · 4~6월</div>
+      <div class="q-num c-rose">20</div>
+      <div class="q-tags">
+        <span class="q-tag q-tag-ai">AI 8</span>
+        <span class="q-tag q-tag-nonai">Non-AI 12</span>
+        <span class="q-tag q-tag-note">연간 최고 볼륨</span>
+      </div>
+    </div>
+    <div class="q-card q3">
+      <div class="q-label">2025 Q3 · 7~9월</div>
+      <div class="q-num c-teal">14</div>
+      <div class="q-tags">
+        <span class="q-tag q-tag-ai">AI 1</span>
+        <span class="q-tag q-tag-nonai">Non-AI 13</span>
+        <span class="q-tag q-tag-note">오프라인 2건</span>
+      </div>
+    </div>
+    <div class="q-card q4">
+      <div class="q-label">2025 Q4 · 10~12월</div>
+      <div class="q-num c-amber">15</div>
+      <div class="q-tags">
+        <span class="q-tag q-tag-ai">AI 7</span>
+        <span class="q-tag q-tag-nonai">Non-AI 8</span>
+        <span class="q-tag q-tag-note">AI 비율 회복</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI 비중 비교 -->
+  <div class="ai-compare fade d4">
+    <div class="ai-card">
+      <div class="ai-year-tag">2025 AI / Non-AI 비중</div>
+      <div class="ai-ratio-nums">
+        <div class="ai-big c-purple">29%</div>
+        <div class="ai-unit">AI 코스 비중</div>
+      </div>
+      <div class="ratio-track"><div class="ratio-fill" style="width:29%"></div></div>
+      <div class="ratio-legend">
+        <span style="color:var(--purple); font-size:var(--text-xs); font-weight:600;">AI 18건</span>
+        <span style="color:var(--teal); font-size:var(--text-xs); font-weight:600;">Non-AI 44건</span>
+      </div>
+      <div class="ai-desc">
+        연초에는 Non-AI 중심이었으나 <em>Q2부터 AI 강의가 주요 런칭 축</em>으로 부상. Q3에 AI가 1건으로 급감했다가 Q4에 7건으로 회복.
+      </div>
+    </div>
+    <div class="ai-card">
+      <div class="ai-year-tag">2026 AI / Non-AI 비중 (1~4월 확정 기준)</div>
+      <div class="ai-ratio-nums">
+        <div class="ai-big c-purple">69%</div>
+        <div class="ai-unit">AI 코스 비중</div>
+      </div>
+      <div class="ratio-track"><div class="ratio-fill" style="width:69%"></div></div>
+      <div class="ratio-legend">
+        <span style="color:var(--purple); font-size:var(--text-xs); font-weight:600;">AI 31건</span>
+        <span style="color:var(--teal); font-size:var(--text-xs); font-weight:600;">Non-AI 14건</span>
+      </div>
+      <div class="ai-desc">
+        2025년 29% → 2026년 <em>69%로 완전 역전</em>. 무료세미나·원데이클래스 신규 포맷도 모두 AI 중심. 클로드 코드가 단독 라인업(입문/마케터/자동화)으로 구성.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+  02 카테고리
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">02 —</span>
+      <span class="section-title">카테고리별 주력 분석</span>
+    </div>
+    <span class="sec-note">기획전 제외 · 런칭 건수 기준<br>카테고리: 제목·포맷 기반 분류</span>
+  </div>
+
+  <div class="cat-top">
+    <!-- 카테고리 랭킹 -->
+    <div class="cat-list">
+      <div class="cat-list-header">
+        <span>#</span><span>카테고리</span><span>합계</span><span>2025</span><span>추이</span>
+      </div>
+      <!-- AI/자동화 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">01</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">AI / 자동화</span>
+          <div class="cat-bar-inline" style="width:100%;background:var(--purple);"></div>
+        </div>
+        <div class="cat-total c-purple">43</div>
+        <div class="cat-25">23건</div>
+        <div class="cat-trend"><span class="trend-badge trend-up">↑ 성장</span></div>
+      </div>
+      <!-- 3D -->
+      <div class="cat-list-row">
+        <div class="cat-rank">02</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">3D / 모션 / VFX</span>
+          <div class="cat-bar-inline" style="width:42%;background:var(--teal);"></div>
+        </div>
+        <div class="cat-total">18</div>
+        <div class="cat-25">15건</div>
+        <div class="cat-trend"><span class="trend-badge trend-down">↓ 급감</span></div>
+      </div>
+      <!-- 세미나 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">03</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">세미나 / 원데이클래스</span>
+          <div class="cat-bar-inline" style="width:35%;background:var(--amber);"></div>
+        </div>
+        <div class="cat-total c-amber">15</div>
+        <div class="cat-25">1건</div>
+        <div class="cat-trend"><span class="trend-badge trend-new">★ 신규</span></div>
+      </div>
+      <!-- 일러스트 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">04</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">일러스트 / 드로잉</span>
+          <div class="cat-bar-inline" style="width:33%;background:var(--rose);"></div>
+        </div>
+        <div class="cat-total">14</div>
+        <div class="cat-25">11건</div>
+        <div class="cat-trend"><span class="trend-badge trend-down">↓ 감소</span></div>
+      </div>
+      <!-- 디자인 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">05</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">디자인 / BX</span>
+          <div class="cat-bar-inline" style="width:16%;background:var(--blue);"></div>
+        </div>
+        <div class="cat-total">7</div>
+        <div class="cat-25">7건</div>
+        <div class="cat-trend"><span class="trend-badge trend-down">↓ 감소</span></div>
+      </div>
+      <!-- 영상 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">06</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">영상 / 편집</span>
+          <div class="cat-bar-inline" style="width:9%;background:var(--slate);"></div>
+        </div>
+        <div class="cat-total">4</div>
+        <div class="cat-25">3건</div>
+        <div class="cat-trend"><span class="trend-badge trend-same">→ 유지</span></div>
+      </div>
+      <!-- 비즈니스 -->
+      <div class="cat-list-row">
+        <div class="cat-rank">07</div>
+        <div class="cat-name-cell">
+          <span class="cat-name">비즈니스 / 수익화</span>
+          <div class="cat-bar-inline" style="width:5%;background:var(--amber);opacity:0.5;"></div>
+        </div>
+        <div class="cat-total">1</div>
+        <div class="cat-25">0건</div>
+        <div class="cat-trend"><span class="trend-badge trend-new">★ 신규</span></div>
+      </div>
+    </div>
+
+    <!-- 포맷 분포 -->
+    <div class="fmt-card">
+      <div class="card-title">포맷 분포 (전체)</div>
+      <div class="fmt-list">
+        <div class="fmt-item">
+          <div class="fmt-item-top">
+            <span class="fmt-name">온라인 VOD</span>
+            <span class="fmt-count">103건 (85%)</span>
+          </div>
+          <div class="fmt-track"><div class="fmt-fill" style="width:85%;background:var(--purple);"></div></div>
+        </div>
+        <div class="fmt-item">
+          <div class="fmt-item-top">
+            <span class="fmt-name">무료 세미나</span>
+            <span class="fmt-count">8건 (7%)</span>
+          </div>
+          <div class="fmt-track"><div class="fmt-fill" style="width:7%;background:var(--amber);"></div></div>
+        </div>
+        <div class="fmt-item">
+          <div class="fmt-item-top">
+            <span class="fmt-name">원데이클래스</span>
+            <span class="fmt-count">6건 (5%)</span>
+          </div>
+          <div class="fmt-track"><div class="fmt-fill" style="width:5%;background:var(--rose);"></div></div>
+        </div>
+        <div class="fmt-item">
+          <div class="fmt-item-top">
+            <span class="fmt-name">오프라인</span>
+            <span class="fmt-count">5건 (4%)</span>
+          </div>
+          <div class="fmt-track"><div class="fmt-fill" style="width:4%;background:var(--teal);"></div></div>
+        </div>
+        <div class="fmt-item">
+          <div class="fmt-item-top">
+            <span class="fmt-name">멘토링</span>
+            <span class="fmt-count">1건 (1%)</span>
+          </div>
+          <div class="fmt-track"><div class="fmt-fill" style="width:1%;background:var(--blue);"></div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--space-6); padding-top:var(--space-5); border-top:1px solid var(--border);">
+        <div class="card-title">2026 신규 포맷</div>
+        <div style="font-size:var(--text-xs); color:var(--text-secondary); line-height:1.8;">
+          무료세미나·원데이클래스·기획전이 <em>2026년 처음 도입</em>. 온라인 VOD 의존도를 낮추고 다채널 운영 체계로 전환 중.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 히트맵 -->
+  <div class="heatmap-card">
+    <div style="padding:var(--space-5) var(--space-6); border-bottom:1px solid var(--border); background:var(--surface-2);">
+      <span class="card-title" style="margin:0;">분기별 카테고리 런칭 히트맵 (건수, 기획전 제외)</span>
+    </div>
+    <table class="heatmap-table">
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>25 Q1</th><th>25 Q2</th><th>25 Q3</th><th>25 Q4</th>
+          <th>26 Q1</th><th>26 Q2</th>
+          <th class="hm-note">비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="hm-cat">AI / 자동화</td>
+          <td><span class="hm-cell hm-2">4</span></td>
+          <td><span class="hm-cell hm-11 hm-peak">11</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-3">7</span></td>
+          <td><span class="hm-cell hm-3">8</span></td>
+          <td><span class="hm-cell hm-4">10</span></td>
+          <td class="hm-note" style="font-size:10px; color:var(--text-tertiary);">Q2 최고·Q3 저점·지속 성장</td>
+        </tr>
+        <tr>
+          <td class="hm-cat">3D / 모션 / VFX</td>
+          <td><span class="hm-cell hm-2">4</span></td>
+          <td><span class="hm-cell hm-3">5</span></td>
+          <td><span class="hm-cell hm-3">5</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td class="hm-note">25 Q2~Q3 핵심 → 급감 중</td>
+        </tr>
+        <tr>
+          <td class="hm-cat">세미나 / 원데이</td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-3">6</span></td>
+          <td><span class="hm-cell hm-4">8</span></td>
+          <td class="hm-note" style="color:var(--amber);">★ 2026 신규 급성장</td>
+        </tr>
+        <tr>
+          <td class="hm-cat">일러스트 / 드로잉</td>
+          <td><span class="hm-cell hm-2">3</span></td>
+          <td><span class="hm-cell hm-1">2</span></td>
+          <td><span class="hm-cell hm-1">2</span></td>
+          <td><span class="hm-cell hm-2">4</span></td>
+          <td><span class="hm-cell hm-2">3</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td class="hm-note">안정적 유지 → 서서히 축소</td>
+        </tr>
+        <tr>
+          <td class="hm-cat">디자인 / BX</td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-2">4</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td class="hm-note">25 Q3 집중 후 소멸</td>
+        </tr>
+        <tr>
+          <td class="hm-cat">영상 / 편집</td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td><span class="hm-cell hm-1">2</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-0">—</span></td>
+          <td><span class="hm-cell hm-1">1</span></td>
+          <td class="hm-note">단발적 유지</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+  03 AI 세그먼트 분석 (신규)
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">03 —</span>
+      <span class="section-title">AI 강의 세그먼트 분석</span>
+    </div>
+    <span class="sec-note">AI 태그 강의 49건 기준<br>세그먼트 분류: 제목 키워드 기반</span>
+  </div>
+
+  <!-- 세그먼트 상태 3분류 요약 -->
+  <div class="seg-status-row">
+    <div class="seg-status-group">
+      <div class="seg-status-label seg-label-up">🚀 급성장</div>
+      <div class="seg-status-cards">
+        <div class="seg-status-card seg-card-up">
+          <div class="seg-sc-name">AI 코딩 / 개발 자동화</div>
+          <div class="seg-sc-nums"><span class="seg-from">1건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-up">9건</span></div>
+          <div class="seg-sc-sub">Claude Code · 바이브코딩 · LLM</div>
+        </div>
+        <div class="seg-status-card seg-card-up">
+          <div class="seg-sc-name">AI 전문직 버티컬</div>
+          <div class="seg-sc-nums"><span class="seg-from">0건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-up">5건</span></div>
+          <div class="seg-sc-sub">병원경영 · 건축인테리어 · 전문직</div>
+        </div>
+        <div class="seg-status-card seg-card-up">
+          <div class="seg-sc-name">AI 영상 / VFX</div>
+          <div class="seg-sc-nums"><span class="seg-from">4건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-up">7건</span></div>
+          <div class="seg-sc-sub">Kling · VFX · AI 영화 · MV</div>
+        </div>
+      </div>
+    </div>
+    <div class="seg-status-group">
+      <div class="seg-status-label seg-label-mid">📈 성장/신규</div>
+      <div class="seg-status-cards">
+        <div class="seg-status-card seg-card-mid">
+          <div class="seg-sc-name">AI 디자인 / BX</div>
+          <div class="seg-sc-nums"><span class="seg-from">1건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-mid">4건</span></div>
+          <div class="seg-sc-sub">AI BX · 그래픽디자인 · 비주얼</div>
+        </div>
+        <div class="seg-status-card seg-card-mid">
+          <div class="seg-sc-name">AI 수익화 / 챌린지</div>
+          <div class="seg-sc-nums"><span class="seg-from">0건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-mid">2건</span></div>
+          <div class="seg-sc-sub">5060 수익화 · 챌린지 포맷</div>
+        </div>
+      </div>
+    </div>
+    <div class="seg-status-group">
+      <div class="seg-status-label seg-label-down">📉 감소</div>
+      <div class="seg-status-cards">
+        <div class="seg-status-card seg-card-down">
+          <div class="seg-sc-name">AI 이미지 / 커머셜 제작</div>
+          <div class="seg-sc-nums"><span class="seg-from seg-from-was">7건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-down">0건</span></div>
+          <div class="seg-sc-sub">미드저니 · 커머셜 이미지 · 가상모델</div>
+        </div>
+        <div class="seg-status-card seg-card-down">
+          <div class="seg-sc-name">AI 업무·비즈니스 자동화</div>
+          <div class="seg-sc-nums"><span class="seg-from seg-from-was">4건</span><span class="seg-arrow">→</span><span class="seg-to seg-to-down">2건</span></div>
+          <div class="seg-sc-sub">콘텐츠 자동화 · 마케팅 가이드</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 분기별 세그먼트 흐름 차트 -->
+  <div class="seg-flow-card">
+    <div class="seg-flow-header">
+      <span class="card-title" style="margin:0;">분기별 세그먼트 흐름</span>
+      <div class="seg-flow-legend">
+        <span class="sfl-item"><span class="sfl-dot" style="background:var(--rose)"></span>AI 이미지/커머셜</span>
+        <span class="sfl-item"><span class="sfl-dot" style="background:var(--purple)"></span>AI 코딩/개발</span>
+        <span class="sfl-item"><span class="sfl-dot" style="background:var(--blue)"></span>AI 영상/VFX</span>
+        <span class="sfl-item"><span class="sfl-dot" style="background:var(--teal)"></span>AI 업무자동화</span>
+        <span class="sfl-item"><span class="sfl-dot" style="background:var(--amber)"></span>AI 디자인/BX</span>
+        <span class="sfl-item"><span class="sfl-dot" style="background:#e879a0"></span>AI 전문직</span>
+      </div>
+    </div>
+    <div class="seg-flow-grid" id="segFlowGrid"></div>
+  </div>
+
+  <!-- 세그먼트 상세 테이블 -->
+  <div class="seg-detail-card">
+    <div style="padding:var(--space-5) var(--space-6); border-bottom:1px solid var(--border); background:var(--surface-2);">
+      <span class="card-title" style="margin:0;">세그먼트별 강의 목록</span>
+    </div>
+
+    <!-- 급성장: AI 코딩/개발 자동화 -->
+    <div class="seg-group">
+      <div class="seg-group-header" style="border-left:3px solid var(--purple);">
+        <div class="sgh-left">
+          <span class="sgh-badge" style="background:rgba(155,116,247,0.15);color:var(--purple);">🚀 급성장</span>
+          <span class="sgh-name">AI 코딩 / 개발 자동화</span>
+        </div>
+        <div class="sgh-counts">
+          <span class="sgh-yr25">2025 · 1건</span>
+          <span class="sgh-arr">→</span>
+          <span class="sgh-yr26" style="color:var(--purple);">2026 · 8건</span>
+        </div>
+      </div>
+      <div class="seg-rows">
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q4</span><span class="sr-title">바이브코딩으로 이게되네? 월 천 버는 초고퀄리티 웹사이트 완성! w. Figma Make & Cursor AI</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-divider">2026 →</div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q1</span><span class="sr-title">이커머스 AI 자동화 올인원 패키지 with 안티그래비티×클로드코드</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">클로드 코드로 24시간 Full 가동! 100명 규모 AI 조직 운영 자동화 구축하기</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">[원데이] 클로드 코드 10배 똑똑하게 만들기 : 에이전트·스킬·하네스 설계 공식 & 수익화</span><span class="sr-fmt">원데이</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">일잘러를 위한 클로드 코드 입문 바이블 : 현실적인 30가지 업무 자동화&생산성 프로젝트</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">초격차 : 마케터를 위한 Claude Code</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">[쉐어엑스] 유니온 : VB스튜디오 (바이브코딩으로 MV 제작 툴 만들기)</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">LLM Wiki</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">블렌더 + 클로드 코드 디자인 (계획)</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26 seg-row-planned"><span class="sr-q">예정</span><span class="sr-title">[Open Seminar] 정상록 클로드코드 (5/13 진행)</span><span class="sr-fmt">세미나</span></div>
+      </div>
+    </div>
+
+    <!-- 급성장: AI 전문직 버티컬 -->
+    <div class="seg-group">
+      <div class="seg-group-header" style="border-left:3px solid #e879a0;">
+        <div class="sgh-left">
+          <span class="sgh-badge" style="background:rgba(232,121,160,0.15);color:#e879a0;">🚀 급성장</span>
+          <span class="sgh-name">AI 전문직 버티컬</span>
+        </div>
+        <div class="sgh-counts">
+          <span class="sgh-yr25">2025 · 0건</span>
+          <span class="sgh-arr">→</span>
+          <span class="sgh-yr26" style="color:#e879a0;">2026 · 5건</span>
+        </div>
+      </div>
+      <div class="seg-rows">
+        <div class="seg-divider">2026 신규 →</div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q1</span><span class="sr-title">12가지 AI 건축·인테리어 초격차 패키지 (with 나노바나나×제미나이)</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q1</span><span class="sr-title">[Open Seminar] 개원의를 위한 병원 경영 데이터&AI 입문</span><span class="sr-fmt">세미나</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">[원데이] 3년 아끼는 AI 활용 병원 입지 원데이 클래스</span><span class="sr-fmt">원데이</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">초격차 : 500개 의원 데이터로 완성하는 AI 병원 경영 올인원</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">인플루언서 : 전문직</span><span class="sr-fmt">VOD</span></div>
+      </div>
+    </div>
+
+    <!-- 재점화: AI 영상/VFX -->
+    <div class="seg-group">
+      <div class="seg-group-header" style="border-left:3px solid var(--blue);">
+        <div class="sgh-left">
+          <span class="sgh-badge" style="background:rgba(91,141,239,0.15);color:var(--blue);">🚀 재점화</span>
+          <span class="sgh-name">AI 영상 / VFX</span>
+        </div>
+        <div class="sgh-counts">
+          <span class="sgh-yr25">2025 · 4건</span>
+          <span class="sgh-arr">→</span>
+          <span class="sgh-yr26" style="color:var(--blue);">2026 · 7건</span>
+        </div>
+      </div>
+      <div class="seg-rows">
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q1</span><span class="sr-title">AI로 완성하는 5가지 감도높은 광고 제작: 이미지, 음악, 영상, 편집까지</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">2025 하이퀄리티 AI 커머셜 이미지·영상 제작 초격차 by. 준토AI</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">초격차 : 입문자를 위한 AI 100일 챌린지 : SNS 콘텐츠부터 영상 제작</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q4</span><span class="sr-title">대형 엔터사가 주목하는, neither.i의 AI 비주얼 영상 제작 입문</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-divider">2026 재점화 →</div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">AI로 완성하는 3D 장편 애니메이션 제작 입문 : Kling × 나노바나나 × Midjourney</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">[하루] 비전공자를 위한 감도 높은 AI 영화 제작 입문</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">[원데이] 3시간 완성! 엔터 비주얼 AI VFX 원데이 클래스 w. ComfyUI Cloud</span><span class="sr-fmt">원데이</span></div>
+        <div class="seg-row seg-row-26"><span class="sr-q">26 Q2</span><span class="sr-title">AI VFX by. 김현</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26 seg-row-planned"><span class="sr-q">예정</span><span class="sr-title">[원데이] 편집하는여자 : 프리미어 AI</span><span class="sr-fmt">원데이</span></div>
+        <div class="seg-row seg-row-26 seg-row-planned"><span class="sr-q">예정</span><span class="sr-title">서브컬쳐 AI MV (계획)</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-26 seg-row-planned"><span class="sr-q">예정</span><span class="sr-title">[Open Seminar] 오동하 감독 (5/15)</span><span class="sr-fmt">세미나</span></div>
+      </div>
+    </div>
+
+    <!-- 감소: AI 이미지/커머셜 -->
+    <div class="seg-group">
+      <div class="seg-group-header" style="border-left:3px solid var(--rose);">
+        <div class="sgh-left">
+          <span class="sgh-badge" style="background:rgba(242,107,138,0.15);color:var(--rose);">📉 감소</span>
+          <span class="sgh-name">AI 이미지 / 커머셜 제작</span>
+        </div>
+        <div class="sgh-counts">
+          <span class="sgh-yr25" style="color:var(--rose);">2025 · 7건 (피크)</span>
+          <span class="sgh-arr">→</span>
+          <span class="sgh-yr26">2026 · 0건</span>
+        </div>
+      </div>
+      <div class="seg-rows">
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q1</span><span class="sr-title">미드저니 스타일 레퍼런스 코드로 만드는 감도높은 AI 아트웍 1000종+</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">디자이너를 위한 AI 활용 브랜드 룩북 제작 (Midjourney & Kling)</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">미드저니 하나로 끝내는 : 뉴비 맞춤형 비주얼 콘텐츠 120% 활용 제작</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">시선을 사로잡는 AI 기반 SNS 광고 제작 by. 노웨이</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">AI 코스메틱 마스터 패키지 : 일관성을 유지하는 커머셜 아트웍의 모든 것</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q2</span><span class="sr-title">AI와 3D를 활용한 하이브리드 BX 프로세스와 브랜드 아트웍 by. 조수진</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-row seg-row-25"><span class="sr-q">25 Q3</span><span class="sr-title">감쪽같은 AI 가상 모델 2025 초격차 패키지 Signature+</span><span class="sr-fmt">VOD</span></div>
+        <div class="seg-divider" style="color:var(--rose);">2026 런칭 없음 — 이미지 생성 포맷이 영상·코딩으로 흡수</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 세그먼트 인사이트 3개 -->
+  <div class="seg-insight-row">
+    <div class="seg-insight-card">
+      <div class="si-icon">⚡</div>
+      <div class="si-title">Claude Code가 새 주력 세그먼트로 등극</div>
+      <div class="si-body">25 Q4에 처음 등장한 바이브코딩 강의가 26 Q2에 <em>클로드 코드 단독 라인업 8건</em>으로 폭발. 입문·마케터·조직자동화·원데이 등 타깃을 잘게 세분화하며 한 도구로 다수 SKU를 뽑아내는 구조.</div>
+    </div>
+    <div class="seg-insight-card">
+      <div class="si-icon">🏥</div>
+      <div class="si-title">전문직 버티컬은 세미나가 먼저, 강의가 따라오는 구조</div>
+      <div class="si-body">병원 세미나(무료) → 병원 원데이 → 병원 경영 초격차 순으로 깔때기가 형성됨. AI 코스에서 <em>리드젠 → 유료 전환</em>의 명확한 퍼널 설계를 확인할 수 있는 첫 사례.</div>
+    </div>
+    <div class="seg-insight-card">
+      <div class="si-icon">📸</div>
+      <div class="si-title">미드저니 중심 이미지 제작 세그먼트는 사실상 소멸</div>
+      <div class="si-body">2025 Q2에 5건으로 피크를 찍고 2026년엔 0건. 이미지 생성 단독 강의 포맷이 포화 상태에 달했거나, <em>AI 영상·코딩 세그먼트로 수요가 이동</em>한 것으로 해석됨. 후속 포지셔닝 전략 필요.</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+  04 최근 3개월 & 앞으로
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">04 —</span>
+      <span class="section-title">최근 3개월 & 시도 중인 방향</span>
+    </div>
+    <span class="sec-note">2026년 2~4월 기준<br>예정 강의 포함</span>
+  </div>
+
+  <div class="recent-layout">
+    <!-- 시그널 -->
+    <div class="signals-card">
+      <div class="card-title">핵심 시그널</div>
+      <div class="signal-row">
+        <div class="signal-dot" style="background:var(--purple);"></div>
+        <div class="signal-body">
+          <div class="signal-main">클로드 코드 라인업 집중</div>
+          <div class="signal-sub">입문·마케터·자동화 3종 세트화 — 4월에만 3건</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot" style="background:var(--amber);"></div>
+        <div class="signal-body">
+          <div class="signal-main">원데이클래스 포맷 실험</div>
+          <div class="signal-sub">3시간 단기 집중형 · AI VFX / 클코</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot" style="background:var(--teal);"></div>
+        <div class="signal-body">
+          <div class="signal-main">병원/의료 버티컬 진입</div>
+          <div class="signal-sub">AI 병원 경영 · 개원 전문 — 3월 3종 동시 투입</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot" style="background:var(--rose);"></div>
+        <div class="signal-body">
+          <div class="signal-main">무료세미나 리드젠 정례화</div>
+          <div class="signal-sub">월 1~2회 Open Seminar 정착 추세</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot" style="background:var(--blue);"></div>
+        <div class="signal-body">
+          <div class="signal-main">AI × 기존 카테고리 융합</div>
+          <div class="signal-sub">AI BX·AI 영상·AI 건축인테리어 등 혼합형</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 타임라인 -->
+    <div class="timeline">
+      <!-- 2월 -->
+      <div class="tl-month-block">
+        <div class="tl-month-header">
+          <span class="tl-month-name">February</span>
+          <div class="tl-month-line"></div>
+          <span class="tl-month-count">10건</span>
+        </div>
+        <div class="tl-items">
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">네오아카데미 : 채색 해법서! 빛과 색감·묘사 연출법</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[Open Seminar] 5060 AI 수익화 Day1, 2</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[Open Seminar] ANNUAL REVIEW 2025 — PLUS X EDITION</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">12가지 AI 건축·인테리어 초격차 패키지 (with 나노바나나×제미나이)</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">단미·쁘다의 헤어변형의 모든 것</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-etc">N/A</span><span class="tl-title">채채의 인스타툰 초격차 600+</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">2026 고감도 AI BX 디자인 올인원 패키지</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">이커머스 AI 자동화 올인원 with 안티그래비티×클로드코드</span><span class="tl-fmt">VOD</span></div>
+        </div>
+      </div>
+
+      <!-- 3월 -->
+      <div class="tl-month-block">
+        <div class="tl-month-header">
+          <span class="tl-month-name">March</span>
+          <div class="tl-month-line"></div>
+          <span class="tl-month-count">8건</span>
+        </div>
+        <div class="tl-items">
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">3D 툴 없이 만드는 엔터 3D 비주얼 아트웍 (어도비 디멘션)</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[Open Seminar] 개원의를 위한 병원 경영 데이터&AI 입문</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">STAR741의 외주를 부르는 반무테 독학 솔루션</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">[Open Seminar] 3D 툴 없이 만드는 고퀄리티 엔터 3D 비주얼 아트웍</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">AI로 완성하는 3D 장편 애니메이션 : Kling × 나노바나나 × 미드저니</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[원데이] 3년 아끼는 AI 활용 병원 입지 원데이 클래스</span><span class="tl-fmt">원데이</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[하루] 비전공자를 위한 감도 높은 AI 영화 제작 입문</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">초격차 : 500개 의원 데이터로 완성하는 AI 병원 경영 올인원</span><span class="tl-fmt">VOD</span></div>
+        </div>
+      </div>
+
+      <!-- 4월 -->
+      <div class="tl-month-block">
+        <div class="tl-month-header">
+          <span class="tl-month-name active">April  <span style="color:var(--purple);font-size:9px;font-weight:700;background:rgba(155,116,247,0.12);padding:2px 6px;border-radius:3px;margin-left:4px;">현재</span></span>
+          <div class="tl-month-line"></div>
+          <span class="tl-month-count">12건</span>
+        </div>
+        <div class="tl-items">
+          <div class="tl-item"><span class="badge badge-etc">N/A</span><span class="tl-title">[Open Seminar] STAR741 반무테 드로잉 입문 세미나</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">에이핫 : 시선을 사로잡는 콘텐츠 감각 트레이닝</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">클로드 코드로 24시간 Full 가동! AI 조직 운영 자동화 구축하기</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[원데이] 3시간 완성! 엔터 비주얼 AI VFX w. ComfyUI Cloud</span><span class="tl-fmt">원데이</span></div>
+          <div class="tl-item"><span class="badge badge-nonai">Non-AI</span><span class="tl-title">영상 편집 오뜨케해? : 45종 예제 + 400종 템플릿</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">[원데이] 클로드 코드 10배 똑똑하게 만들기 : 에이전트·스킬·하네스</span><span class="tl-fmt">원데이</span></div>
+          <div class="tl-item"><span class="badge badge-etc">예정</span><span class="tl-title">[Open Seminar] 오동하 감독 (5/15)</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-etc">예정</span><span class="tl-title">[Open Seminar] 정상록 클로드코드 (5/13)</span><span class="tl-fmt">무료세미나</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">일잘러를 위한 클로드 코드 입문 바이블 : 30가지 업무 자동화</span><span class="tl-fmt">VOD</span></div>
+          <div class="tl-item"><span class="badge badge-ai">AI</span><span class="tl-title">초격차 : 마케터를 위한 Claude Code</span><span class="tl-fmt">VOD</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5월~ 예정 -->
+  <div style="margin-top:var(--space-8);">
+    <div class="card-title" style="margin-bottom:var(--space-4);">5월 이후 예정 라인업</div>
+    <div class="upcoming-grid">
+      <div class="up-card"><div class="up-meta"><span class="badge badge-ai">AI · VOD</span><span class="up-date">5.11</span></div><div class="up-title">[쉐어엑스] 유니온 : VB스튜디오 — 바이브코딩으로 MV 제작 툴</div></div>
+      <div class="up-card"><div class="up-meta"><span class="badge badge-ai">AI · VOD</span><span class="up-date">5.11</span></div><div class="up-title">LLM Wiki (신규 포맷 실험)</div></div>
+      <div class="up-card"><div class="up-meta"><span class="badge badge-ai">AI · 원데이</span><span class="up-date">5.13</span></div><div class="up-title">[원데이] 편집하는여자 : 프리미어 AI</div></div>
+      <div class="up-card"><div class="up-meta"><span class="badge badge-ai">AI · VOD</span><span class="up-date">5.25</span></div><div class="up-title">초격차 : 나노바나나 생산성 AI 끝판왕</div></div>
+      <div class="up-card"><div class="up-meta"><span class="badge badge-ai">AI · VOD</span><span class="up-date">5.25</span></div><div class="up-title">AI VFX by. 김현</div></div>
+      <div class="up-card"><div class="up-meta"><span class="badge badge-nonai">Non-AI · 오프라인</span><span class="up-date">5.25</span></div><div class="up-title">[쉐어엑스] SHARE X Academy (고관여 오프라인)</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+  04 프로모션 분석 (신규 섹션)
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">05 —</span>
+      <span class="section-title">기획전 / 프로모션 분석</span>
+    </div>
+    <span class="sec-note">2026년 신규 도입 · 런칭 집계 별도 관리<br>총 6건 (2026년 1~5월)</span>
+  </div>
+
+  <div class="promo-intro">
+    <div class="promo-stat-card">
+      <div>
+        <div class="label" style="margin-bottom:var(--space-3);">2025</div>
+        <div style="font-size:40px;font-weight:800;letter-spacing:-0.04em;color:var(--text-tertiary);">0</div>
+        <div class="promo-stat-sub">기획전 없음</div>
+      </div>
+      <div style="border-top:1px solid var(--border);padding-top:var(--space-5);">
+        <div class="label" style="margin-bottom:var(--space-3);">2026</div>
+        <div class="promo-stat-num">6</div>
+        <div class="promo-stat-sub">기획전/프로모션</div>
+      </div>
+      <div class="promo-stat-note">
+        2025년엔 전무하다가 2026년 1월부터 <em>매월 테마 기획전</em>이 정례화됨. 캘린더 마케팅 체계로의 전환 신호.
+      </div>
+    </div>
+
+    <div class="promo-timeline-card">
+      <div class="promo-timeline-header">
+        <span>월</span><span>기획전명</span><span>기간</span><span>유형</span>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">1월</span></div>
+        <div class="promo-name">크리에이티브 100일 챌린지</div>
+        <div class="promo-period">1/14 ~ 1/31</div>
+        <div><span class="promo-type promo-type-regular">테마 기획전</span></div>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">2월</span></div>
+        <div class="promo-name">크리에이티브 MD's Pick</div>
+        <div class="promo-period">온고잉 (상시)</div>
+        <div><span class="promo-type promo-type-ongoing">상시 큐레이션</span></div>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">2월</span></div>
+        <div class="promo-name">2월 기획전</div>
+        <div class="promo-period">2/20 ~ 2/28</div>
+        <div><span class="promo-type promo-type-regular">테마 기획전</span></div>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">3월</span></div>
+        <div class="promo-name">봄 제철 슈퍼마켓</div>
+        <div class="promo-period">3/20 ~ 3/31</div>
+        <div><span class="promo-type promo-type-regular">테마 기획전</span></div>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">4월</span></div>
+        <div class="promo-name">크리에이티브 올스타전</div>
+        <div class="promo-period">4/15 ~ 4/30</div>
+        <div><span class="promo-type promo-type-regular">테마 기획전</span></div>
+      </div>
+      <div class="promo-row">
+        <div><span class="promo-month-badge">5월</span></div>
+        <div class="promo-name">5월 기획전</div>
+        <div class="promo-period">예정</div>
+        <div><span class="promo-type promo-type-regular">테마 기획전</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 프로모션 인사이트 -->
+  <div class="promo-insight-grid">
+    <div class="promo-insight-card">
+      <div class="pi-icon">📅</div>
+      <div class="pi-title">월별 테마 기획전 정례화</div>
+      <div class="pi-desc">1~5월 연속 5회 운영. 챌린지·큐레이션·시즌 테마 등 다양한 각도로 실험 중. 캘린더 마케팅 체계가 구축되고 있음.</div>
+    </div>
+    <div class="promo-insight-card">
+      <div class="pi-icon">🔄</div>
+      <div class="pi-title">상시 큐레이션 채널 도입</div>
+      <div class="pi-desc">MD's Pick은 기간 한정이 아닌 <em>온고잉</em> 형태. 특정 기간 외에도 지속적인 상품 노출 채널로 활용 가능.</div>
+    </div>
+    <div class="promo-insight-card">
+      <div class="pi-icon">⚡</div>
+      <div class="pi-title">기획전과 신규 강의 연동 가능성</div>
+      <div class="pi-desc">100일 챌린지 기획전이 AI 코스 런칭 시기와 겹치는 패턴. 신규 강의 출시를 기획전으로 부스팅하는 구조 설계 필요.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════
+  05 종합 인사이트
+══════════════════════════════════ -->
+<div class="section">
+<div class="page-wrap">
+  <div class="sec-header">
+    <div class="sec-header-left">
+      <span class="label">06 —</span>
+      <span class="section-title">종합 인사이트</span>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">01</span>
+        <span class="ins-title">AI 포트폴리오로의 완전한 피벗</span>
+      </div>
+      <div class="ins-body">2025년 Non-AI 71% → 2026년 AI 69%로 1년 만에 역전. 4월 기준 클로드 코드가 <em>입문·마케터·조직자동화</em> 3종 라인업을 형성하며 단일 도구 기반의 세분화 전략이 구체화됨.</div>
+      <span class="ins-tag" style="background:rgba(155,116,247,0.12);color:var(--purple);">PORTFOLIO SHIFT</span>
+    </div>
+
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">02</span>
+        <span class="ins-title">세미나·원데이가 리드젠 엔진으로 안착</span>
+      </div>
+      <div class="ins-body">2025년 1건 → 2026년 Q1~Q2에만 14건. 무료세미나는 유료 AI 코스의 상단 깔때기로 작동. 원데이클래스(3시간)는 별도 프리미엄 포맷으로 자리잡는 중.</div>
+      <span class="ins-tag" style="background:rgba(245,166,35,0.12);color:var(--amber);">FUNNEL DESIGN</span>
+    </div>
+
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">03</span>
+        <span class="ins-title">병원/의료 버티컬 — 신규 시장 진입 실험</span>
+      </div>
+      <div class="ins-body">3월에 개원의 타깃 강의 3종 동시 투입. 기존 크리에이티브 버티컬에서 <em>전문직 B2B</em> 방향으로 다각화 시도. 프리미엄 단가 포지셔닝과 연결 가능성 높음.</div>
+      <span class="ins-tag" style="background:rgba(62,207,160,0.12);color:var(--teal);">NEW VERTICAL</span>
+    </div>
+
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">04</span>
+        <span class="ins-title">3D·디자인·일러스트는 축소 중</span>
+      </div>
+      <div class="ins-body">3D 카테고리 25→1건으로 급감. 그러나 하나리·존코바·네오아카데미 등 기존 강사 시리즈는 유지됨. <em>AI 어시스트 결합 형태</em>로 재포지셔닝이 필요한 시점.</div>
+      <span class="ins-tag" style="background:rgba(242,107,138,0.12);color:var(--rose);">CATEGORY RISK</span>
+    </div>
+
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">05</span>
+        <span class="ins-title">기획전 정례화 — 마케팅 운영 체계화</span>
+      </div>
+      <div class="ins-body">2025년 0건 → 2026년 1~5월 연속 6건. 테마 기획전·상시 큐레이션·챌린지 등 3가지 유형으로 분화. 강의 런칭 시기와 기획전을 연동하는 구조 설계가 다음 과제.</div>
+      <span class="ins-tag" style="background:rgba(91,141,239,0.12);color:var(--blue);">MARKETING OPS</span>
+    </div>
+
+    <div class="ins-card">
+      <div class="ins-top">
+        <span class="ins-num">06</span>
+        <span class="ins-title">Q3 AI 모멘텀 단절 — 분산 필요</span>
+      </div>
+      <div class="ins-body">2025 Q3에 AI 코스가 1건으로 급감하며 모멘텀이 끊김. Q2 집중 런칭 이후 <em>Q3 공백이 반복</em>되지 않도록 분기 간 AI 라인 지속성 확보가 중요.</div>
+      <span class="ins-tag" style="background:rgba(255,255,255,0.06);color:var(--text-secondary);">PLANNING</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 푸터 -->
+<div class="page-wrap">
+  <footer>
+    <span>2T Contents Analytics Report · Generated 2026.04</span>
+    <span>데이터: 분석용_시트_2026_데이터.csv · 기획전 항목 별도 집계 · 순매출 미집계</span>
+  </footer>
+</div>
+
+<script>
+/* ── 바 차트 렌더 ── */
+function renderBarChart(id, months, values, color) {
+  const wrap = document.getElementById(id);
+  if (!wrap) return;
+  const max = Math.max(...values);
+  const H = 90;
+  months.forEach((m, i) => {
+    const v = values[i] || 0;
+    const h = v > 0 ? Math.max(6, (v / max) * H) : 3;
+    const col = document.createElement('div');
+    col.className = 'bar-col';
+
+    const bar = document.createElement('div');
+    bar.className = 'bar-body';
+    bar.style.cssText = `height:${h}px; background:${color};`;
+    bar.title = `${m}: ${v}건`;
+    if (v > 0) {
+      const val = document.createElement('span');
+      val.className = 'bar-val';
+      val.textContent = v;
+      bar.appendChild(val);
+    }
+
+    const lbl = document.createElement('span');
+    lbl.className = 'bar-lbl';
+    lbl.textContent = m;
+
+    col.appendChild(bar);
+    col.appendChild(lbl);
+    wrap.appendChild(col);
+  });
+}
+
+const m25 = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+const v25 = [3, 4, 6, 8, 8, 4, 6, 4, 4, 3, 5, 7];
+
+const m26 = ['1월','2월','3월','4월','5월','6월','7월'];
+const v26 = [7, 8, 8, 12, 10, 4, 1];
+
+renderBarChart('chart25', m25, v25, 'var(--purple)');
+renderBarChart('chart26', m26, v26, 'var(--rose)');
+
+/* ── 세그먼트 흐름 차트 렌더 ── */
+(function() {
+  const grid = document.getElementById('segFlowGrid');
+  if (!grid) return;
+
+  const periods = ['25 Q1','25 Q2','25 Q3','25 Q4','26 Q1','26 Q2'];
+  const segments = [
+    { name: 'AI 이미지/커머셜', color: 'var(--rose)',   data: [1,5,1,0,0,0] },
+    { name: 'AI 코딩/개발',     color: 'var(--purple)', data: [0,0,0,1,0,8] },
+    { name: 'AI 영상/VFX',      color: 'var(--blue)',   data: [1,2,0,1,0,7] },
+    { name: 'AI 업무자동화',    color: 'var(--teal)',   data: [0,1,0,3,1,1] },
+    { name: 'AI 디자인/BX',     color: 'var(--amber)',  data: [0,0,0,1,3,1] },
+    { name: 'AI 전문직',        color: '#e879a0',       data: [0,0,0,0,2,3] },
+  ];
+  const maxVal = 8;
+
+  // 헤더
+  const emptyHead = document.createElement('div');
+  emptyHead.className = 'sfg-head';
+  grid.appendChild(emptyHead);
+  periods.forEach(p => {
+    const h = document.createElement('div');
+    h.className = 'sfg-head';
+    // 연도 경계 표시
+    if (p === '26 Q1') h.style.color = 'var(--purple)';
+    h.textContent = p;
+    grid.appendChild(h);
+  });
+
+  // 연도 구분선
+  const yDivider = document.createElement('div');
+  yDivider.className = 'sfg-divider-col';
+  grid.appendChild(yDivider);
+
+  // 세그먼트 행
+  segments.forEach(seg => {
+    const label = document.createElement('div');
+    label.className = 'sfg-period-label';
+    label.textContent = seg.name;
+    label.style.borderLeft = `3px solid ${seg.color}`;
+    label.style.paddingLeft = 'var(--space-3)';
+    grid.appendChild(label);
+
+    seg.data.forEach(val => {
+      const cell = document.createElement('div');
+      cell.className = 'sfg-bar-cell';
+      if (val === 0) {
+        const z = document.createElement('span');
+        z.className = 'sfg-zero';
+        z.textContent = '—';
+        cell.appendChild(z);
+      } else {
+        const bar = document.createElement('div');
+        bar.className = 'sfg-bar';
+        const size = Math.round(28 + (val / maxVal) * 28);
+        bar.style.cssText = `background:${seg.color}; opacity:${0.3 + (val/maxVal)*0.7}; width:${size}px; height:${size}px; font-size:${val>=5?12:10}px;`;
+        bar.textContent = val;
+        bar.title = `${seg.name}: ${val}건`;
+        cell.appendChild(bar);
+      }
+      grid.appendChild(cell);
+    });
+  });
+})();
+
+
+</script>
+</body>
+</html>
